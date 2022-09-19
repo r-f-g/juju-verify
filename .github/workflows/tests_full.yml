@@ -164,8 +164,8 @@ jobs:
         uses: charmed-kubernetes/actions-operator@main
         with:
           provider: serverstack
-          credentials-yaml: ${{ secrets.CREDENTIALS_YAML }}
-          clouds-yaml: ${{ secrets.CLOUDS_YAML }}
+          credentials-yaml: ${{ env.CREDENTIALS_YAML }}
+          clouds-yaml: ${{ env.CLOUDS_YAML }}
       - name: Run func tests
         run: |
           tox -e func
